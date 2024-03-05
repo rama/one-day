@@ -22,7 +22,12 @@ function App() {
 					)}
 				</>
 			) : (
-				<form onSubmit={() => setIsSetupComplete(true)}>
+				<form
+					onSubmit={(e) => {
+						e.preventDefault();
+						habit && setIsSetupComplete(true);
+					}}
+				>
 					<h2>
 						I want to{" "}
 						<input
